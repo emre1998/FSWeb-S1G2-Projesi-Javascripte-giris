@@ -107,7 +107,7 @@ Aşağıdakileri oyun isimli fonksiyonu kullanarak yap.
 OYUNUN KURALLARI: Makas Kağıdı yener| Kağıt Taşı yener | Taş Makas'ı yener | veya beraberlik olur.
 */
 
-function oyun(oyuncuSecimi, bilgisayarSecimi) {
+function game(oyuncuSecimi, bilgisayarSecimi) {
   if (oyuncuSecimi === bilgisayarSecimi) {
     return "Beraberlik";
   } else if (
@@ -135,7 +135,7 @@ function oyun(oyuncuSecimi, bilgisayarSecimi) {
 5. Oluşan değeri geri dönün
 
 Şimdi kendi seçtiğin bir seçime karşı bilgisayarın rastgele oluşturduğu seçimi yukarıda yazdığın oyun fonsiyonu ile oynayın ve sonucu console'a yazdırın.
-Örn: console.log(oyun("Makas",bilgisayarinSecimi()))
+
 */
 function bilgisayarinSecimi() {
   let rastgeleSayi = Math.random();
@@ -150,17 +150,17 @@ function bilgisayarinSecimi() {
 
 function oyun(kullaniciSecimi, bilgisayarSecimi) {
   if (kullaniciSecimi === bilgisayarSecimi) {
-    return "Berabere";
+    return "Beraberlik";
   } else if (kullaniciSecimi === "Taş" && bilgisayarSecimi === "Makas" ||
              kullaniciSecimi === "Kağıt" && bilgisayarSecimi === "Taş" ||
              kullaniciSecimi === "Makas" && bilgisayarSecimi === "Kağıt") {
-    return "Kullanıcı kazandı!";
+    return "Kazandın!";
   } else {
-    return "Bilgisayar kazandı!";
+    return "Kaybettin!";
   }
 }
 
-let kullaniciSecimi = prompt("Taş, Kağıt ya da Makas seçin:");
+let kullaniciSecimi ="Taş";
 let bilgisayarSecimi = bilgisayarinSecimi();
 console.log("Kullanıcı: " + kullaniciSecimi);
 console.log("Bilgisayar: " + bilgisayarSecimi);
@@ -178,7 +178,8 @@ Aşağdaki milDonusturucu fonksiyonunu aşağıdakileri kullanarak tamamla:
 */
 
 function milDonusturucu(kilometre) {
-  const mil = kilometre / 1.609344; // 1 mil = 1.609344 km
+  let mil = kilometre * 0.621371
+   // 1 mil = 1.609344 km
   return mil;
 }
 
@@ -211,17 +212,14 @@ Aşağıdakileri cocukSarkisi fonksiyonunda yap:
 3. Bu fonksiyonun dışında bir yerde, maymun sayısının her seferinde 1 azaldığı ve maymun sayısı 1 olana kadar devem eden bir döngü oluşturun. 
 4. Bu döngüde, her seferinde cocukSarkisi fonsiyonu çalışsın ve console.log'a dönen metni yazdırsın.
 */
-
-function cocukSarkisi(maymunSayisi) {
-  console.log(`${maymunSayisi} küçük maymun yatakta zıplamış, biri düşüp başını çarpmış, Anne doktoru aramış, Doktor çok kızdı: Bir daha yatakta zıplamak yok!`);
+function cocukSarkisi(oAnkiMaymunAdedi){
+  return oAnkiMaymunAdedi + " küçük maymun yatakta zıplamış, biri düşüp başını çarpmış, Anne doktoru aramış, Doktor çok kızmış: Bir daha yatakta zıplamak yok!";
 }
+let maymunAdedi = 5;
+for( let i = maymunAdedi; i > 0 ; i--)
+console.log(cocukSarkisi(i));
 
-let maymunSayisi = 5;
 
-while (maymunSayisi > 0) {
-  cocukSarkisi(maymunSayisi);
-  maymunSayisi--;
-}
 
 /* Görev 6 : Not Hesaplayıcı */
 
