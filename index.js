@@ -261,15 +261,17 @@ Aşağıdakileri sesliHarfSayaci fonskiyonunda yap.
 İPUCU - .includes() methoduna bakabilirsin. (https://www.w3schools.com/jsref/jsref_includes.asp)
 */
 
-function sesliHarfSayaci(str) {
-  const sesliHarf = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
-  let sayac = 0;
-  for (let i = 0; i < str.length; i++) {
-    if (sesliHarf.includes(str[i])) {
-      count++;
-    }
+function sesliHarfSayaci(string) {
+ let sesli_harfler = "aeıioöuüAEIİOÖUÜ";
+ let sesli_harf_sayisi = 0;
+ for(let i=0; i<string.lenght;i++) {
+  if(sesli_harfler.includes(string[i])){
+    sesli_harf_sayisi++;
   }
-  return count;
+ }  
+
+ return sesli_harf_sayisi; 
+
 }
 
 /* Lütfen bu satırın alt tarafını değiştirmeyin */
